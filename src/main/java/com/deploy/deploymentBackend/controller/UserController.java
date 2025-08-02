@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.deploy.deploymentBackend.entity.User;
 import com.deploy.deploymentBackend.service.UserService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
