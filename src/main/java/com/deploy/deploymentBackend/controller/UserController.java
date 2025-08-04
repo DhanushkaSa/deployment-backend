@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://springboot-5678.web.app/")
 public class UserController {
 
     @Autowired
