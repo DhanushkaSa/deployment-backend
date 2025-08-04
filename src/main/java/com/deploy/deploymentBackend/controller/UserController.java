@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    public UserService userService;
 
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
