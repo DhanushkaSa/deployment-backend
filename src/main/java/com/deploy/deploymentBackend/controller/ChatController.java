@@ -22,7 +22,7 @@ public class ChatController {
 
         // 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
 
-        @Value("${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}") // <-- Spring will get
+        @Value("${OPENROUTER_API_KEY}") // <-- Spring will get
         private String openRouterApiKey;
         // this from the Railway
         // env var
