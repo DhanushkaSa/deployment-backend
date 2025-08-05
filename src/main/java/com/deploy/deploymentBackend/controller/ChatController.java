@@ -22,8 +22,8 @@ public class ChatController {
 
         // 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
 
-        @Value("${OPENROUTER_API_KEY}") // <-- Spring will get
-        private String openRouterApiKey;
+        // @Value("${OPENROUTER_API_KEY}") // <-- Spring will get
+        // private String openRouterApiKey;
         // this from the Railway
         // env var
 
@@ -45,7 +45,7 @@ public class ChatController {
                 HttpRequest request = HttpRequest.newBuilder()
                                 .uri(URI.create("https://openrouter.ai/api/v1/chat/completions"))
                                 .header("Authorization",
-                                                "Bearer " + openRouterApiKey)
+                                                "Bearer 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")
                                 .header("Content-Type", "application/json")
                                 // .header("HTTP-Referer", "https://yourdomain.com") // Optional
                                 // .header("X-Title", "My Free Chatbot") // Optional
