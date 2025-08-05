@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +23,8 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class ChatController {
 
         // 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
-        private final Dotenv dotenv = Dotenv.load();
+        @Value("${openrouter.api.key}")
+        private String openRouterApiKey;
 
         @PostMapping
         public ResponseEntity<String> chatWithBot(@RequestBody Map<String, String> payload) throws Exception {
@@ -42,7 +44,7 @@ public class ChatController {
                 HttpRequest request = HttpRequest.newBuilder()
                                 .uri(URI.create("https://openrouter.ai/api/v1/chat/completions"))
                                 .header("Authorization",
-                                                "Bearer " + dotenv.get("OPENROUTER_API_KEY"))
+                                                "Bearer " + openRouterApiKey)
                                 .header("Content-Type", "application/json")
                                 // .header("HTTP-Referer", "https://yourdomain.com") // Optional
                                 // .header("X-Title", "My Free Chatbot") // Optional
