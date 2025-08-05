@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
 @RestController
 @RequestMapping("/api/chat")
 @CrossOrigin(origins = { "https://springboot-5678.web.app", "http://localhost:5173" }) // Allow all origins for
@@ -23,8 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ChatController {
 
         // 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
-        @Value("${openrouter.api.key}")
+
+        @Value("${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}") // <-- Spring will get
         private String openRouterApiKey;
+        // this from the Railway
+        // env var
 
         @PostMapping
         public ResponseEntity<String> chatWithBot(@RequestBody Map<String, String> payload) throws Exception {
